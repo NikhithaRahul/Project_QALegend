@@ -2,41 +2,116 @@ package test;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation_core.Base;
+import pageobject.AddUserPage;
+import pageobject.HomePage;
+import pageobject.LoginPage;
+import pageobject.UsersPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class UsersPageTest extends Base
 {
 	@Test
-	public void verifyEditUser()
+	public void verifyEditFunctionality()
 	{
-		WebElement usernamefield=driver.findElement(By.id("username"));
-		usernamefield.sendKeys(ExcelUtility.getStringData(0, 0, "UsersPage"));
-		WebElement passwordfield=driver.findElement(By.xpath("//input[@name='password']"));
-		passwordfield.sendKeys(ExcelUtility.getIntegerData(0, 1,"UsersPage"));
-		WebElement loginbutton=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
-		loginbutton.click();
-		WebElement endtourbutton=driver.findElement(By.xpath("//button[@class='btn btn-default btn-sm']"));
-		endtourbutton.click();
-	
-		WebElement usermanagement=driver.findElement(By.xpath("//span[text()='User Management']"));
-		usermanagement.click();
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		WebElement users=driver.findElement(By.xpath("(//span)[8]"));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span)[8]")));
-		users.click();
-		WebElement searchfield=driver.findElement(By.xpath("//input[@class='form-control input-sm']"));
-		searchfield.sendKeys(ExcelUtility.getStringData(0, 2, "UsersPage"));
-				
-		WebElement editbutton=driver.findElement(By.xpath("//a[@class='btn btn-xs btn-primary']"));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i)[103]")));
-		editbutton.click();
+		LoginPage login=new LoginPage(driver);
+		login.enterUserName(ExcelUtility.getStringData(0, 1, "LoginPage"));
+		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, "LoginPage"));
+		HomePage home=login.clickOnLoginButton();
+		home.clickOnEndTourButton();
+		home.clickOnUserManagement();
+		home.clickOnUsers();
+		UsersPage user=new UsersPage(driver);
+		user.enterDataInSearchField(ExcelUtility.getStringData(0, 2, "UsersPage"));
+		user.clickOnEditButton();
+		AddUserPage adduser=new AddUserPage(driver);
+		adduser.getSelectRole();
+		user.clickOnUpdateButton();
+		user.enterDataInSearchField(ExcelUtility.getStringData(0, 3, "UsersPage"));
+		String actualrole=user.getRoleAfterSearch();
+		String expectedrole=ExcelUtility.getStringData(0, 4, "UsersPage");
+		Assert.assertEquals(actualrole, expectedrole,"Edit Functionality failed");
+		
 	}
+	@Test
+	public void verifyViewFunctionality()
+	{
+		LoginPage login=new LoginPage(driver);
+		login.enterUserName(ExcelUtility.getStringData(0, 1, "LoginPage"));
+		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, "LoginPage"));
+		HomePage home=login.clickOnLoginButton();
+		home.clickOnEndTourButton();
+		home.clickOnUserManagement();
+		home.clickOnUsers();
+		UsersPage user=new UsersPage(driver);
+		user.enterDataInSearchField(ExcelUtility.getStringData(1, 0, "UsersPage"));
+		user.clickOnViewButton();
+		String actualprofilename=user.getProfileUsername();
+		String expectedprofilename=ExcelUtility.getStringData(1, 1, "UsersPage");
+		Assert.assertEquals(actualprofilename, expectedprofilename, "VIEW FUNCTIONALITY FAILED");
+	}
+	@Test
+	public void verifyDeleteFunctionality()
+	{
+		String prefix=RandomDataUtility.getPrefix();
+		String firstname=RandomDataUtility.getFirstName();
+		String lastname=RandomDataUtility.getLastName();
+		String emailid=firstname+lastname+"@gmail.com";
+		String actualemailid=emailid;
+		String username=firstname+"_"+lastname;
+		String password=firstname+lastname+"@12";
+		
+		LoginPage login=new LoginPage(driver);
+		login.enterUserName(ExcelUtility.getStringData(0, 0, "AddUserPage"));
+		login.enterPassWord(ExcelUtility.getIntegerData(0, 1, "AddUserPage"));
+		login.clickOnLoginButton();
+		HomePage home=new HomePage(driver);
+		home.clickOnEndTourButton();
+		home.clickOnUserManagement();
+		home.clickOnUsers();
+		
+		UsersPage user=new UsersPage(driver);
+		user.clickOnAddButton();
+		
+		AddUserPage adduser=new AddUserPage(driver);
+		adduser.enterPrefix(prefix);
+		adduser.enterFirstName(firstname);
+		adduser.enterLastName(lastname);
+		adduser.enterEmail(emailid);
+		adduser.getSelectRole();
+		adduser.enterUserName(username);
+		adduser.enterPassword(password);
+		adduser.enterConfirmPassword(password);
+		adduser.enterSalesCommissionPercent();
+		adduser.clickOnSaveButton();
+		user.enterDataInSearchField(emailid);
+		user.clickOnDeleteButton();
+		user.clickDeletePopupOkButton();
+		user.enterDataInSearchField(emailid);
+		String actualtext=user.getSearchResultAfterDelete();
+		String expectedtext=ExcelUtility.getStringData(1, 2, "UsersPage");
+		Assert.assertEquals(actualtext, expectedtext, "Delete functionality failed");
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
 
 }

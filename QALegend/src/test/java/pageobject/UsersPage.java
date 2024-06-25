@@ -20,15 +20,31 @@ public class UsersPage {
 	WebElement search_field;
 	@FindBy(xpath="(//td)[4]")
 	WebElement searchresult;
+	@FindBy(xpath="//a[@class='btn btn-xs btn-primary']")
+	WebElement editbutton;
+	@FindBy(id="submit_user_button")
+	WebElement update;
+	@FindBy(xpath="(//td)[3]")
+	WebElement rolefield;
+	@FindBy(xpath="//a[@class='btn btn-xs btn-info']")
+	WebElement viewbutton;
+	@FindBy(xpath="//h3[@class='profile-username']")
+	WebElement profile_username;
+	@FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_user_button']")
+	WebElement deletebutton;
+	@FindBy(xpath="//button[@class='swal-button swal-button--confirm swal-button--danger']")
+	WebElement deletepopup_okbutton;
+	@FindBy(xpath="//td[@class='dataTables_empty']")
+	WebElement afterdelet_searchresult;
 	public AddUserPage clickOnAddButton()
 	{
 		add_button.click();
 		return new AddUserPage(driver);
 	}
-	public void enterDataInSearchField(String email)
+	public void enterDataInSearchField(String searchdata)
 	{
 		
-		search_field.sendKeys(email);
+		search_field.sendKeys(searchdata);
 	}
 	public String getSearchResultText()
 	{
@@ -37,6 +53,44 @@ public class UsersPage {
 		System.out.println(expectedemail);
 		return expectedemail;
 		
+	}
+	public void clickOnEditButton()
+	{
+		editbutton.click();
+	}
+	public void clickOnUpdateButton()
+	{
+		update.click();
+	}
+	public void clickOnViewButton()
+	{
+		viewbutton.click();
+	}
+	public void clickOnDeleteButton()
+	{
+		deletebutton.click();
+	}
+	public String getRoleAfterSearch()
+	{
+		WaitUtility.waitForElement(driver, rolefield);
+		String role=rolefield.getText();
+		System.out.println(role);
+		return role;
+	}
+	public String getProfileUsername()
+	{
+		String profiletext=profile_username.getText();
+		return profiletext;
+	}
+	public void clickDeletePopupOkButton()
+	{
+		deletepopup_okbutton.click();
+	}
+	public String getSearchResultAfterDelete()
+	{
+		WaitUtility.waitForElement(driver, afterdelet_searchresult);
+		String result=afterdelet_searchresult.getText();
+		return result;
 	}
 
 

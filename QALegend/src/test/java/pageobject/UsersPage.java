@@ -17,6 +17,7 @@ public class UsersPage {
 	@FindBy(xpath="//input[@class='form-control input-sm']")
 	WebElement search_field;
 	@FindBy(xpath="(//td)[4]")
+	
 	WebElement searchresult;
 	public AddUserPage clickOnAddButton()
 	{
@@ -29,9 +30,15 @@ public class UsersPage {
 	}
 	public String getSearchResultText()
 	{
-		String expectedemail=searchresult.getText();
+		String expectedemail=getSearchresult().getText();
 		return expectedemail;
 		
+	}
+	public WebElement getSearchresult() {
+		return searchresult;
+	}
+	public void setSearchresult(WebElement searchresult) {
+		this.searchresult = searchresult;
 	}
 
 }

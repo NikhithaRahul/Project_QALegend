@@ -16,6 +16,7 @@ import pageobject.LoginPage;
 import pageobject.UsersPage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
+import utilities.WaitUtility;
 
 public class AddUserPageTest extends Base{
 
@@ -48,13 +49,15 @@ public class AddUserPageTest extends Base{
 		adduser.enterLastName(lastname);
 		adduser.enterEmail(emailid);
 		adduser.getSelectedRole();
+		//adduser.getSelectedRole();
 		adduser.enterUserName(username);
 		adduser.enterPassword(password);
 		adduser.enterConfirmPassword(password);
 		adduser.enterSalesCommissionPercent();
 		adduser.clickOnSaveButton();
 		user.enterDataInSearchField(emailid);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//td)[4]")));
+		//WaitUtility.waitForElement(driver, user.Searchresult());
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//td)[4]")));
 		String expectedemail=user.getSearchResultText();
 		Assert.assertEquals(actualemail, expectedemail,"Adding new user failed");
 				
@@ -87,7 +90,7 @@ public class AddUserPageTest extends Base{
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
 		adduser.enterEmail(emailid);
-		adduser.getSelectedRole();
+		//adduser.getSelectedRole();
 		adduser.enterUserName(username);
 		adduser.enterPassword(password);
 		adduser.enterConfirmPassword(password);

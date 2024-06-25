@@ -1,5 +1,8 @@
 package pageobject;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utilities.ExcelUtility;
+import utilities.PageUtility;
 
 public class AddUserPage {
 	WebDriver driver;
@@ -23,10 +27,10 @@ public class AddUserPage {
 	WebElement lastnamefield;
 	@FindBy(id="email")
 	WebElement emailfield;
-	@FindBy(xpath="//span[@class='select2-selection select2-selection--single']")
-	WebElement roleselection;
-	@FindBy(id="role")
-	WebElement roledrpdwn;
+	//@FindBy(xpath="//span[@class='select2-selection select2-selection--single']")
+	//WebElement roleselection;
+	//@FindBy(id="role")
+	//WebElement roledrpdwn;
 	@FindBy(id="username")
 	WebElement username_field;
 	@FindBy(id="password")
@@ -37,6 +41,9 @@ public class AddUserPage {
 	WebElement sales_commision;
 	@FindBy(id="submit_user_button")
 	WebElement save_button;
+	@FindBy(xpath="//select[@class='form-control select2 select2-hidden-accessible' and @id='role']")
+	WebElement roleselection;
+	
 /*	public void enterPrefix(String user_prefix)
 	{
 		prefix.sendKeys(user_prefix);
@@ -57,10 +64,25 @@ public class AddUserPage {
 	}
 	public Select getSelectedRole()
 	{
-		roleselection.click();
-		Select select=new Select(roledrpdwn);
-		select.selectByVisibleText("Supervisor");
-		return select;
+		//roleselection.click();
+		//Select select=new Select(roledrpdwn);
+		//select.selectByVisibleText("Supervisor");
+		//return select;
+		PageUtility page=new PageUtility();
+		Select select =new Select(roleselection);
+		List<WebElement> roleslist=select.getOptions();
+		int size=roleslist.size();
+		//System.out.println(roleslist.size());
+		for(int i=0;i<size;i++)
+		{
+			String roles=roleslist.get(i).getText();
+			if(roles.equals("Supervisor"))
+			{
+				
+				page.selectByVisibleText(roleselection, roles);
+				
+			}
+		}
 	}
 	public void enterUserName(String username)
 	{

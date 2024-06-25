@@ -14,6 +14,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import utilities.WaitUtility;
+
 public class Base {
 	protected static WebDriver driver;
 	public void initialiseBrowser(String browser)
@@ -36,6 +38,7 @@ public class Base {
 		}
 		driver.get("https://qalegend.com/billing/public/login");
 		driver.manage().window().maximize();
+		WaitUtility.waitUsingImplicitWait(driver);
 	}
 	@BeforeMethod
 	public void setUp()

@@ -23,7 +23,7 @@ public class AddUserPageTest extends Base{
 	@Test
 	public void verifyAddUser()
 	{
-		//String prefix=RandomDataUtility.getPrefix();
+		String prefix=RandomDataUtility.getPrefix();
 		String firstname=RandomDataUtility.getFirstName();
 		String lastname=RandomDataUtility.getLastName();
 		String emailid=firstname+lastname+"@gmail.com";
@@ -38,34 +38,33 @@ public class AddUserPageTest extends Base{
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		home.clickOnUsers();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span)[8]")));
+		
 		UsersPage user=new UsersPage(driver);
 		user.clickOnAddButton();
+		
 		AddUserPage adduser=new AddUserPage(driver);
-		//adduser.enterPrefix(prefix);
+		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
 		adduser.enterEmail(emailid);
-		adduser.getSelectedRole();
-		//adduser.getSelectedRole();
+		adduser.getSelectRole();
 		adduser.enterUserName(username);
 		adduser.enterPassword(password);
 		adduser.enterConfirmPassword(password);
 		adduser.enterSalesCommissionPercent();
 		adduser.clickOnSaveButton();
 		user.enterDataInSearchField(emailid);
-		//WaitUtility.waitForElement(driver, user.Searchresult());
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//td)[4]")));
+		
 		String expectedemail=user.getSearchResultText();
-		Assert.assertEquals(actualemail, expectedemail,"Adding new user failed");
+		System.out.println(expectedemail);
+		Assert.assertEquals(actualemail, expectedemail,"ADDING NEW USER FAILED");
 				
 	}
 	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void verifyUserLoginWithNewlyaddeduser()
 	{
-		//String prefix=RandomDataUtility.getPrefix();
+		String prefix=RandomDataUtility.getPrefix();
 		String firstname=RandomDataUtility.getFirstName();
 		String lastname=RandomDataUtility.getLastName();
 		String emailid=firstname+lastname+"@gmail.com";
@@ -80,31 +79,33 @@ public class AddUserPageTest extends Base{
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		home.clickOnUsers();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span)[8]")));
+		
 		UsersPage user=new UsersPage(driver);
 		user.clickOnAddButton();
+		
 		AddUserPage adduser=new AddUserPage(driver);
-		//adduser.enterPrefix(prefix);
+		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
 		adduser.enterEmail(emailid);
-		//adduser.getSelectedRole();
+		adduser.getSelectRole();
 		adduser.enterUserName(username);
 		adduser.enterPassword(password);
 		adduser.enterConfirmPassword(password);
 		adduser.enterSalesCommissionPercent();
 		adduser.clickOnSaveButton();
+		
 		home.clickOnHomeTab();
 		home.clickOnXyzTab();
 		home.clickOnSignOut();
 		login.enterUserName(username);
 		login.enterPassWord(password);
 		login.clickOnLoginButton();
+		
 		String actualtext=home.getUserNameText();
 		String expectedtext=firstname+" "+lastname;
-		Assert.assertEquals(actualtext, expectedtext,"login failed");
+		Assert.assertEquals(actualtext, expectedtext,"NEWLY ADDED USER LOGIN FAILED");
 				
 	}
 

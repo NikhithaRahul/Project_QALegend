@@ -19,7 +19,7 @@ public class AddUserPage {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
-	@FindBy(xpath="surname")
+	@FindBy(id="surname")
 	WebElement prefix;
 	@FindBy(xpath="//input[@id='first_name']")
 	WebElement firstnamefield;
@@ -27,10 +27,6 @@ public class AddUserPage {
 	WebElement lastnamefield;
 	@FindBy(id="email")
 	WebElement emailfield;
-	//@FindBy(xpath="//span[@class='select2-selection select2-selection--single']")
-	//WebElement roleselection;
-	//@FindBy(id="role")
-	//WebElement roledrpdwn;
 	@FindBy(id="username")
 	WebElement username_field;
 	@FindBy(id="password")
@@ -44,62 +40,52 @@ public class AddUserPage {
 	@FindBy(xpath="//select[@class='form-control select2 select2-hidden-accessible' and @id='role']")
 	WebElement roleselection;
 	
-/*	public void enterPrefix(String user_prefix)
+	public void enterPrefix(String user_prefix)
 	{
 		prefix.sendKeys(user_prefix);
-	}*/
+	}
 	public void enterFirstName(String first_name)
 	{
 		firstnamefield.sendKeys(first_name);
 		
 	}
+	
 	public void enterLastName(String last_name)
 	{
 		lastnamefield.sendKeys(last_name);
 		
 	}
+	
 	public void enterEmail(String emailid)
 	{
 		emailfield.sendKeys(emailid);
 	}
-	public Select getSelectedRole()
+	
+	public void getSelectRole()
 	{
-		//roleselection.click();
-		//Select select=new Select(roledrpdwn);
-		//select.selectByVisibleText("Supervisor");
-		//return select;
-		PageUtility page=new PageUtility();
-		Select select =new Select(roleselection);
-		List<WebElement> roleslist=select.getOptions();
-		int size=roleslist.size();
-		//System.out.println(roleslist.size());
-		for(int i=0;i<size;i++)
-		{
-			String roles=roleslist.get(i).getText();
-			if(roles.equals("Supervisor"))
-			{
-				
-				page.selectByVisibleText(roleselection, roles);
-				
-			}
-		}
+		PageUtility.selectByVisibleText(roleselection,"Specialist");
 	}
+	
 	public void enterUserName(String username)
 	{
 		username_field.sendKeys(username);
 	}
+	
 	public void enterPassword(String password)
 	{
 		password_field.sendKeys(password);
 	}
+	
 	public void enterConfirmPassword(String password)
 	{
 		confirm_password.sendKeys(password);
 	}
+	
 	public void enterSalesCommissionPercent()
 	{
 		sales_commision.sendKeys(ExcelUtility.getIntegerData(0, 2, "AddUserPage"));
 	}
+	
 	public void clickOnSaveButton()
 	{
 		save_button.click();

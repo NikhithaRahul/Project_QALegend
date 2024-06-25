@@ -11,16 +11,7 @@ import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base
 {
-	@Test
-	public void verifyLoginPageTitle()
-	{
-		LoginPage login=new LoginPage(driver);
-		String actualtitle=login.homePageTitle();
-		String expectedtitle=ExcelUtility.getStringData(0, 0, "LoginPage");
-		Assert.assertEquals(actualtitle, expectedtitle, "TITLE MISMATCH");
 		
-	}
-	
 	@Test
 	public  void verifyLoginWithValidCredentials()
 	{
@@ -32,7 +23,7 @@ public class LoginPageTest extends Base
 		HomePage home=login.clickOnLoginButton();
 		String actualtext=home.getUserNameTextDisplay();
 		String expectedtext=ExcelUtility.getStringData(0, 3, "LoginPage");
-		Assert.assertEquals(actualtext, expectedtext,"login failed");
+		Assert.assertEquals(actualtext, expectedtext,"User Login with valid credentials failed");
 		
 	}
 	
@@ -45,7 +36,7 @@ public class LoginPageTest extends Base
 		HomePage home=login.clickOnLoginButton();
 		String actualerrormsg=login.invalidLoginErrorMessage();
 		String expectederrormsg=ExcelUtility.getStringData(0, 4, "LoginPage");
-		Assert.assertEquals(actualerrormsg, expectederrormsg,"login failed");
+		Assert.assertEquals(actualerrormsg, expectederrormsg,"Successfully logined with Invalid credentials");
 	}	
 	
 

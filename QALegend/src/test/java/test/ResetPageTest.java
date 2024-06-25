@@ -46,7 +46,7 @@ public class ResetPageTest extends Base {
 		reset.clickOnPasswordResetLink();
 		String actualalertmsg=reset.validEmailAlertMessage();
 		String expectedalertmsg=ExcelUtility.getStringData(1, 1, "ResetPage");
-		Assert.assertEquals(actualalertmsg, expectedalertmsg, "Reset password link emailed successfully");
+		Assert.assertEquals(actualalertmsg, expectedalertmsg, "Sending reset password link failed");
 		
 	}
 

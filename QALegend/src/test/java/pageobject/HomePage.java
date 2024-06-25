@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import automation_core.Base;
+import utilities.WaitUtility;
 
 public class HomePage {
 	WebDriver driver;
@@ -20,12 +21,6 @@ public class HomePage {
 	WebElement usernamedisplay;
 	@FindBy(xpath="(//span)[4]")
 	WebElement xyztab;
-	@FindBy(xpath="//a[text()='Profile']")
-	WebElement profile;
-	@FindBy(id="last_name")
-	WebElement lastname;
-	@FindBy(xpath="//button[text()='Update']")
-	WebElement updatebutton;
 	@FindBy(xpath="//span[text()='User Management']")
 	WebElement user_management;
 	@FindBy(xpath="(//span)[8]")
@@ -49,22 +44,7 @@ public class HomePage {
 	{
 		xyztab.click();
 	}
-	public void clickOnProfile()
-	{
-		profile.click();
-	}
-	public void enterLastname(String lastnamefield)
-	{
-		lastname.sendKeys(lastnamefield);
-	}
-	public void clearlastnameField()
-	{
-		lastname.clear();
-	}
-	public void clickOnUpdateButton()
-	{
-		updatebutton.click();
-	}
+	
 	public String getUserNameText()
 	{
 		String username_text=xyztab.getText();
@@ -78,6 +58,7 @@ public class HomePage {
 	public UsersPage clickOnUsers()
 	{
 		users.click();
+		WaitUtility.waitForElement(driver, users);
 		return new UsersPage(driver);
 	}
 	public void clickOnHomeTab()

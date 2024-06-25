@@ -34,7 +34,7 @@ public class UsersPageTest extends Base
 		WebElement searchfield=driver.findElement(By.xpath("//input[@class='form-control input-sm']"));
 		searchfield.sendKeys(ExcelUtility.getStringData(0, 2, "UsersPage"));
 				
-		WebElement editbutton=driver.findElement(By.xpath("(//i)[103]"));
+		WebElement editbutton=driver.findElement(By.xpath("//a[@class='btn btn-xs btn-primary']"));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i)[103]")));
 		editbutton.click();
 	}

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class UsersPage {
 	WebDriver driver;
 	public UsersPage(WebDriver driver)
@@ -17,7 +19,6 @@ public class UsersPage {
 	@FindBy(xpath="//input[@class='form-control input-sm']")
 	WebElement search_field;
 	@FindBy(xpath="(//td)[4]")
-	
 	WebElement searchresult;
 	public AddUserPage clickOnAddButton()
 	{
@@ -26,19 +27,17 @@ public class UsersPage {
 	}
 	public void enterDataInSearchField(String email)
 	{
+		
 		search_field.sendKeys(email);
 	}
 	public String getSearchResultText()
 	{
-		String expectedemail=getSearchresult().getText();
+		WaitUtility.waitForElement(driver, searchresult);
+		String expectedemail=searchresult.getText();
+		System.out.println(expectedemail);
 		return expectedemail;
 		
 	}
-	public WebElement getSearchresult() {
-		return searchresult;
-	}
-	public void setSearchresult(WebElement searchresult) {
-		this.searchresult = searchresult;
-	}
+
 
 }

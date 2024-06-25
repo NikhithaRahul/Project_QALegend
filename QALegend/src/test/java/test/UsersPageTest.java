@@ -102,16 +102,5 @@ public class UsersPageTest extends Base
 		Assert.assertEquals(actualtext, expectedtext, "Delete functionality failed");
 	}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
+	
 }

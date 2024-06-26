@@ -20,7 +20,7 @@ public class HomePage {
 	@FindBy(xpath="(//h1)")
 	WebElement usernamedisplay;
 	@FindBy(xpath="(//span)[4]")
-	WebElement xyztab;
+	WebElement profile;
 	@FindBy(xpath="//span[text()='User Management']")
 	WebElement user_management;
 	@FindBy(xpath="(//span)[8]")
@@ -40,14 +40,15 @@ public class HomePage {
 	{
 		endtourbutton.click();
 	}
-	public void clickOnXyzTab()
+	public ProfilePage clickOnProfileTab()
 	{
-		xyztab.click();
+		profile.click();
+		return new ProfilePage(driver);
 	}
 	
 	public String getUserNameText()
 	{
-		String username_text=xyztab.getText();
+		String username_text=profile.getText();
 		System.out.println(username_text);
 		return username_text;
 	}

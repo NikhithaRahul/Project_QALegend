@@ -54,9 +54,10 @@ public class UsersPage {
 		return expectedemail;
 		
 	}
-	public void clickOnEditButton()
+	public AddUserPage clickOnEditButton()
 	{
 		editbutton.click();
+		return new AddUserPage(driver);
 	}
 	public void clickOnUpdateButton()
 	{

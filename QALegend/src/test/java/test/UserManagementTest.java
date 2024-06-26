@@ -21,11 +21,10 @@ public class UserManagementTest extends Base{
 		HomePage home=login.clickOnLoginButton();
 				
 		home.clickOnEndTourButton();
-		home.clickOnXyzTab();
+		
 		
 		UserManagement user_management=new UserManagement(driver);
-		boolean status=user_management.checkElementEnabled();
-		
+		boolean status=user_management.isUserManagementEnabled();
 		Assert.assertTrue(status, "UserManagement Element Disabled");
 	}
 

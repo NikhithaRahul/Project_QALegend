@@ -25,8 +25,8 @@ public class ResetPageTest extends Base {
 	public void verifyErrorMsgWithInvalidEmailId()
 	{
 		LoginPage login=new LoginPage(driver);
-		ResetPage reset=new ResetPage(driver);
-		login.clickOnforgotPassword();
+		ResetPage reset=login.clickOnforgotPassword();
+		
 		String emailid=ExcelUtility.getStringData(0, 0, "ResetPage");
 		reset.enterEmailAddress(emailid);
 		reset.clickOnPasswordResetLink();
@@ -39,8 +39,7 @@ public class ResetPageTest extends Base {
 	public void verifyPasswordResetwithValidEmailId()
 	{
 		LoginPage login=new LoginPage(driver);
-		ResetPage reset=new ResetPage(driver);
-		login.clickOnforgotPassword();
+		ResetPage reset=login.clickOnforgotPassword();
 		String emailid=ExcelUtility.getStringData(1, 0, "ResetPage");
 		reset.enterEmailAddress(emailid);
 		reset.clickOnPasswordResetLink();

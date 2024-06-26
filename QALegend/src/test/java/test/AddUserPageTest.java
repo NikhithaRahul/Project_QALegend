@@ -38,12 +38,10 @@ public class AddUserPageTest extends Base{
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
-		home.clickOnUsers();
+		UsersPage user=home.clickOnUsers();
 		
-		UsersPage user=new UsersPage(driver);
-		user.clickOnAddButton();
+		AddUserPage adduser=user.clickOnAddButton();
 		
-		AddUserPage adduser=new AddUserPage(driver);
 		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
@@ -79,12 +77,9 @@ public class AddUserPageTest extends Base{
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
-		home.clickOnUsers();
+		UsersPage user=home.clickOnUsers();
 		
-		UsersPage user=new UsersPage(driver);
-		user.clickOnAddButton();
-		
-		AddUserPage adduser=new AddUserPage(driver);
+		AddUserPage adduser=user.clickOnAddButton();
 		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
@@ -97,7 +92,7 @@ public class AddUserPageTest extends Base{
 		adduser.clickOnSaveButton();
 		
 		home.clickOnHomeTab();
-		home.clickOnXyzTab();
+		home.clickOnProfileTab();
 		home.clickOnSignOut();
 		login.enterUserName(username);
 		login.enterPassWord(password);

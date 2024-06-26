@@ -26,7 +26,7 @@ public class UserManagement {
 	@FindBy(xpath="(//span)[10]")
 	WebElement sales_commission_agent;
 	
-	public boolean checkElementEnabled()
+	public boolean isUserManagementEnabled()
 	{
 		boolean status=PageUtility.verifyUserManagementisEnabled(user_management);
 		return status;
@@ -41,5 +41,6 @@ public class UserManagement {
 		PageUtility.verifyUsersfieldisEnabled(roles);
 		
 	}
+	
 
 }

@@ -45,7 +45,7 @@ public class Base {
 	{
 		initialiseBrowser("Chrome");
 	}
-/*	@AfterMethod
+	@AfterMethod
 	public void closeBrowser(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.FAILURE)
@@ -59,7 +59,7 @@ public class Base {
 		TakesScreenshot takescreenshot=(TakesScreenshot)driver;
 		File screenshot=takescreenshot.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(screenshot,new File("./Screenshot/"+result.getName()+".png"));
-	}*/
+	}
 
 
 }

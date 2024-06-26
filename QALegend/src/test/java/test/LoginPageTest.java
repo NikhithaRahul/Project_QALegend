@@ -38,7 +38,7 @@ public class LoginPageTest extends Base
 		HomePage home=login.clickOnLoginButton();
 		String actualerrormsg=login.invalidLoginErrorMessage();
 		String expectederrormsg=ExcelUtility.getStringData(0, 4, Constants.LOGIN_PAGE);
-		Assert.assertEquals(actualerrormsg, expectederrormsg,"Successfully logined with Invalid credentials");
+		Assert.assertEquals(actualerrormsg, expectederrormsg,Messages.INVALIDLOGIN_SUCCESSFUL);
 	}	
 	
 

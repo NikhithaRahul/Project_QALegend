@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constant.Constants;
 import utilities.ExcelUtility;
 import utilities.PageUtility;
 
@@ -63,7 +64,7 @@ public class AddUserPage {
 	
 	public void getSelectRole()
 	{
-		PageUtility.selectByVisibleText(roleselection,"Specialist");
+		PageUtility.selectByVisibleText(roleselection,Constants.ROLE);
 	}
 	
 	public void enterUserName(String username)
@@ -83,7 +84,7 @@ public class AddUserPage {
 	
 	public void enterSalesCommissionPercent()
 	{
-		sales_commision.sendKeys(ExcelUtility.getIntegerData(0, 2, "AddUserPage"));
+		sales_commision.sendKeys(ExcelUtility.getIntegerData(0, 2, Constants.ADDUSER_PAGE));
 	}
 	
 	public void clickOnSaveButton()

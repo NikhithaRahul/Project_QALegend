@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation_core.Base;
+import constant.Constants;
+import constant.Messages;
 import listner.RetryAnalyzer;
 import pageobject.AddUserPage;
 import pageobject.HomePage;
@@ -32,8 +34,8 @@ public class AddUserPageTest extends Base{
 		String password=firstname+lastname+"@12";
 		
 		LoginPage login=new LoginPage(driver);
-		login.enterUserName(ExcelUtility.getStringData(0, 0, "AddUserPage"));
-		login.enterPassWord(ExcelUtility.getIntegerData(0, 1, "AddUserPage"));
+		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
+		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
 		login.clickOnLoginButton();
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
@@ -56,7 +58,7 @@ public class AddUserPageTest extends Base{
 		
 		String expectedemail=user.getSearchResultText();
 		System.out.println(expectedemail);
-		Assert.assertEquals(actualemail, expectedemail,"ADDING NEW USER FAILED");
+		Assert.assertEquals(actualemail, expectedemail,Messages.ADDUSER_FAILED);
 				
 	}
 	@Test(retryAnalyzer=RetryAnalyzer.class)
@@ -71,8 +73,8 @@ public class AddUserPageTest extends Base{
 		String password=firstname+lastname+"@12";
 		
 		LoginPage login=new LoginPage(driver);
-		login.enterUserName(ExcelUtility.getStringData(0, 0, "AddUserPage"));
-		login.enterPassWord(ExcelUtility.getIntegerData(0, 1, "AddUserPage"));
+		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
+		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
 		login.clickOnLoginButton();
 		HomePage home=new HomePage(driver);
 		home.clickOnEndTourButton();
@@ -100,7 +102,7 @@ public class AddUserPageTest extends Base{
 		
 		String actualtext=home.getUserNameText();
 		String expectedtext=firstname+" "+lastname;
-		Assert.assertEquals(actualtext, expectedtext,"NEWLY ADDED USER LOGIN FAILED");
+		Assert.assertEquals(actualtext, expectedtext,Messages.ADDUSER_FAILED);
 				
 	}
 

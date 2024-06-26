@@ -18,7 +18,7 @@ public class UserManagement {
 	}
 	
 	@FindBy(xpath="//span[text()='User Management']")
-	WebElement user_management;
+	WebElement usermngmnt;
 	@FindBy(xpath="(//span)[8]")
 	WebElement users;
 	@FindBy(xpath="(//span)[9]")
@@ -26,19 +26,26 @@ public class UserManagement {
 	@FindBy(xpath="(//span)[10]")
 	WebElement sales_commission_agent;
 	
-	public boolean isUserManagementEnabled()
+/*	public UserManagement clickonUsermanagementField()
 	{
-		boolean status=PageUtility.verifyUserManagementisEnabled(user_management);
-		return status;
-	}
-	public void checkUserFieldEnabled()
+		usermngmnt.click();
+		return new UserManagement(driver);
+	}*/
+	
+	
+	public boolean checkUserFieldEnabled()
 	{
-		PageUtility.verifyUsersfieldisEnabled(users);
+		return PageUtility.isElementEnabled(users);
 		
 	}
-	public void checkRolesFieldEnabled()
+	public boolean checkRolesFieldEnabled()
 	{
-		PageUtility.verifyUsersfieldisEnabled(roles);
+		return PageUtility.isElementEnabled(roles);
+		
+	}
+	public boolean salesCommisionAgentFieldEnabled()
+	{
+		return PageUtility.isElementEnabled(sales_commission_agent);
 		
 	}
 	

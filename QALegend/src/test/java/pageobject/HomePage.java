@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import automation_core.Base;
+import utilities.DateUtility;
 import utilities.WaitUtility;
 
 public class HomePage {
@@ -29,7 +30,8 @@ public class HomePage {
 	WebElement home_tab;
 	@FindBy(xpath="//a[text()='Sign Out']")
 	WebElement sign_out;
-	
+	@FindBy(xpath="//div[@class='m-8 pull-left mt-15 hidden-xs']")
+	WebElement logindate;
 	
 	public String getUserNameTextDisplay()
 	{
@@ -52,9 +54,10 @@ public class HomePage {
 		System.out.println(username_text);
 		return username_text;
 	}
-	public void clickOnUserManagement()
+	public UserManagement clickOnUserManagement()
 	{
 		user_management.click();
+		return new UserManagement(driver);
 	}
 	public UsersPage clickOnUsers()
 	{
@@ -69,6 +72,15 @@ public class HomePage {
 	public void clickOnSignOut()
 	{
 		sign_out.click();
+	}
+	public String getLoginDate()
+	{
+		String login_date=logindate.getText();
+		return login_date;
+	}
+	public String getCurrentDate()
+	{
+		return DateUtility.getUserLoginDate("dd-MM-YYYY");
 	}
 
 }

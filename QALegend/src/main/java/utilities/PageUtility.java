@@ -27,23 +27,12 @@ public class PageUtility {
 		select.selectByVisibleText(visibletext);
 	}
 	
-	public static boolean verifyUserManagementisEnabled(WebElement element)
+	public static boolean isElementEnabled(WebElement element)
 	{
 		boolean isenabled=element.isEnabled();
 		System.out.println(isenabled);
 		return isenabled;
 	}
-	public static boolean verifyUsersfieldisEnabled(WebElement element)
-	{
-		boolean isenabled=element.isEnabled();
-		System.out.println(isenabled);
-		return isenabled;
-	}
-	public static boolean verifyRolesfieldisEnabled(WebElement element)
-	{
-		boolean isenabled=element.isEnabled();
-		System.out.println(isenabled);
-		return isenabled;
-	}
+	
 
 }

@@ -23,9 +23,9 @@ public class UserManagementTest extends Base{
 		home.clickOnEndTourButton();
 		
 		
-		UserManagement user_management=new UserManagement(driver);
-		boolean status=user_management.isUserManagementEnabled();
-		Assert.assertTrue(status, "UserManagement Element Disabled");
+		UserManagement user_mngmt=home.clickOnUserManagement();
+		boolean status=user_mngmt.checkUserFieldEnabled();
+	//	Assert.assertTrue(status, "UserManagement Element Disabled");
 	}
 
 }

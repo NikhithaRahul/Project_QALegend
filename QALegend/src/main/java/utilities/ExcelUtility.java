@@ -7,6 +7,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constant.Constants;
+
 public class ExcelUtility 
 {
 	static FileInputStream f;
@@ -16,7 +18,8 @@ public class ExcelUtility
 	{
 		try
 		{
-		f= new FileInputStream("C:\\Users\\DELL\\git\\Project_QALegend\\QALegend\\src\\main\\resources\\TestData.xlsx");
+		String path=Constants.HOME_DIRECTORY+Constants.TEST_DATA_EXCELPATH;
+		f= new FileInputStream(path);
 		w=new XSSFWorkbook(f);
 		sh=w.getSheet(sheetname);
 		Row row=sh.getRow(rownumber);
@@ -32,7 +35,8 @@ public class ExcelUtility
 	{
 		try
 		{
-		f=new FileInputStream("C:\\Users\\DELL\\git\\Project_QALegend\\QALegend\\src\\main\\resources\\TestData.xlsx");
+		String path=Constants.HOME_DIRECTORY+Constants.TEST_DATA_EXCELPATH;
+		f= new FileInputStream(path);
 		w=new XSSFWorkbook(f);
 		sh=w.getSheet(sheetname);
 		Row row=sh.getRow(rownumber);

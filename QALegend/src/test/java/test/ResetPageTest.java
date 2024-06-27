@@ -11,7 +11,7 @@ import pageobject.ResetPage;
 import utilities.ExcelUtility;
 
 public class ResetPageTest extends Base {
-	@Test
+	@Test(groups="Sanity")
 	public void verifyResetPageTitle()
 	{
 		LoginPage login=new LoginPage(driver);
@@ -22,13 +22,12 @@ public class ResetPageTest extends Base {
 		Assert.assertEquals(actualtitle, expectedtitle,Messages.RESETTITLE_MISMATCH);
 		
 	}
-	@Test
+	@Test(groups="Smoke")
 	
 	public void verifyErrorMsgWithInvalidEmailId()
 	{
 		LoginPage login=new LoginPage(driver);
 		ResetPage reset=login.clickOnforgotPassword();
-		
 		String emailid=ExcelUtility.getStringData(0, 0, Constants.RESET_PAGE);
 		reset.enterEmailAddress(emailid);
 		reset.clickOnPasswordResetLink();
@@ -37,7 +36,7 @@ public class ResetPageTest extends Base {
 		Assert.assertEquals(actualerrormsg, expectederrormsg,Messages.RESET_SUCCESSFUL );
 		
 	}
-	@Test
+	@Test(groups="Smoke")
 	public void verifyPasswordResetwithValidEmailId()
 	{
 		LoginPage login=new LoginPage(driver);

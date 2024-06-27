@@ -13,5 +13,6 @@ public class Messages {
 	public static final String EDIT_STATUS="Edit Functionality failed";
 	public static final String VIEW_FAILED="VIEW FUNCTIONALITY FAILED";
 	public static final String DELETE_FAILED="Delete functionality failed";
+	public static final String ELEMENT_DISABLED=" Element Disabled";
 
 }

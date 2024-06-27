@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import utilities.WaitUtility;
 
@@ -41,9 +42,10 @@ public class Base {
 		WaitUtility.waitUsingImplicitWait(driver);
 	}
 	@BeforeMethod
-	public void setUp()
+	@Parameters("browser")
+	public void setUp(String browsername)
 	{
-		initialiseBrowser("Chrome");
+		initialiseBrowser(browsername);
 	}
 	@AfterMethod
 	public void closeBrowser(ITestResult result) throws IOException

@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 public class LoginPageTest extends Base
 {
 		
-	@Test
+	@Test(groups="Regression")
 	public  void verifyLoginWithValidCredentials()
 	{
 		String username=ExcelUtility.getStringData(0, 1,Constants.LOGIN_PAGE);
@@ -29,7 +29,7 @@ public class LoginPageTest extends Base
 		
 	}
 	
-	@Test(dataProvider="InvalidLogincredentials",dataProviderClass=DataProviders.class)
+	@Test(groups="Sanity",dataProvider="InvalidLogincredentials",dataProviderClass=DataProviders.class)
 	public void verifyErrorMsgWhileLoginWithInvalidCredentials(String username,String password)
 	{
 		LoginPage login=new LoginPage(driver);

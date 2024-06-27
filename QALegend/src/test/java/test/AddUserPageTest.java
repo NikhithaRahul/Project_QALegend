@@ -32,7 +32,6 @@ public class AddUserPageTest extends Base{
 		String actualemail=emailid;
 		String username=firstname+"_"+lastname;
 		String password=firstname+lastname+"@12";
-		
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
 		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
@@ -41,9 +40,7 @@ public class AddUserPageTest extends Base{
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
 		UsersPage user=home.clickOnUsers();
-		
 		AddUserPage adduser=user.clickOnAddButton();
-		
 		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
 		adduser.enterLastName(lastname);
@@ -55,13 +52,12 @@ public class AddUserPageTest extends Base{
 		adduser.enterSalesCommissionPercent();
 		adduser.clickOnSaveButton();
 		user.enterDataInSearchField(emailid);
-		
 		String expectedemail=user.getSearchResultText();
 		System.out.println(expectedemail);
 		Assert.assertEquals(actualemail, expectedemail,Messages.ADDUSER_FAILED);
 				
 	}
-	@Test(retryAnalyzer=RetryAnalyzer.class)
+	@Test()
 	public void verifyUserLoginWithNewlyaddeduser()
 	{
 		String prefix=RandomDataUtility.getPrefix();
@@ -71,7 +67,6 @@ public class AddUserPageTest extends Base{
 		String actualemailid=emailid;
 		String username=firstname+"_"+lastname;
 		String password=firstname+lastname+"@12";
-		
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
 		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
@@ -80,7 +75,6 @@ public class AddUserPageTest extends Base{
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
 		UsersPage user=home.clickOnUsers();
-		
 		AddUserPage adduser=user.clickOnAddButton();
 		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);
@@ -92,14 +86,12 @@ public class AddUserPageTest extends Base{
 		adduser.enterConfirmPassword(password);
 		adduser.enterSalesCommissionPercent();
 		adduser.clickOnSaveButton();
-		
 		home.clickOnHomeTab();
 		home.clickOnProfileTab();
 		home.clickOnSignOut();
 		login.enterUserName(username);
 		login.enterPassWord(password);
 		login.clickOnLoginButton();
-		
 		String actualtext=home.getUserNameText();
 		String expectedtext=firstname+" "+lastname;
 		Assert.assertEquals(actualtext, expectedtext,Messages.ADDUSER_FAILED);

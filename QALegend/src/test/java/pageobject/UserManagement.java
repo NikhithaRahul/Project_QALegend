@@ -26,24 +26,17 @@ public class UserManagement {
 	@FindBy(xpath="(//span)[10]")
 	WebElement sales_commission_agent;
 	
-/*	public UserManagement clickonUsermanagementField()
-	{
-		usermngmnt.click();
-		return new UserManagement(driver);
-	}*/
-	
-	
-	public boolean checkUserFieldEnabled()
+	public boolean isUserFieldEnabled()
 	{
 		return PageUtility.isElementEnabled(users);
 		
 	}
-	public boolean checkRolesFieldEnabled()
+	public boolean isRolesFieldEnabled()
 	{
 		return PageUtility.isElementEnabled(roles);
 		
 	}
-	public boolean salesCommisionAgentFieldEnabled()
+	public boolean issalesCommisionAgentFieldEnabled()
 	{
 		return PageUtility.isElementEnabled(sales_commission_agent);
 		

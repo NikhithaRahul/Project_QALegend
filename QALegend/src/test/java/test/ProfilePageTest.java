@@ -20,11 +20,9 @@ public class ProfilePageTest extends Base
 		String password=ExcelUtility.getIntegerData(0, 2,Constants.LOGIN_PAGE);
 		String lastname=ExcelUtility.getStringData(0, 1, Constants.PROFILE_PAGE);
 		String userfirstname=ExcelUtility.getStringData(0, 0, Constants.PROFILE_PAGE);
-		
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(username);
 		login.enterPassWord(password);
-		
 		HomePage home=login.clickOnLoginButton();
 		home.clickOnEndTourButton();
 		ProfilePage profile=home.clickOnProfileTab();
@@ -32,7 +30,6 @@ public class ProfilePageTest extends Base
 		profile.clearlastnameField();
 		profile.enterLastname(lastname);
 		profile.clickOnUpdateButton();
-		
 		String actualusername=home.getUserNameText();
 		String expectedusername=userfirstname+" "+lastname;
 		Assert.assertEquals(actualusername, expectedusername, Messages.PROFILEUPDATE_FAILED);

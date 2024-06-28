@@ -1,15 +1,18 @@
 package utilities;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 	public static final long IMPLICITWAIT=10;
 	public static final long EXPLICITWAIT=15;
+	public static final long PAGELOADWAIT=10;
 	
 	public static void waitUsingImplicitWait(WebDriver driver)
 	{
@@ -31,9 +34,10 @@ public class WaitUtility {
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(EXPLICITWAIT));
 		wait.until(ExpectedConditions.invisibilityOf(element));
 	}
-	public static  void waitForFluentWait()
+	public static  void waitForElementUsingFluentWait(WebDriver driver,WebElement element)
 	{
-		
+		FluentWait wait=new FluentWait(driver).withTimeout(Duration.ofSeconds(PAGELOADWAIT)).pollingEvery(Duration.ofSeconds(PAGELOADWAIT)).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 

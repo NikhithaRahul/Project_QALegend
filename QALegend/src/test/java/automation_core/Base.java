@@ -64,13 +64,13 @@ public class Base {
 		driver.manage().window().maximize();
 		WaitUtility.waitUsingImplicitWait(driver);
 	}
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void setUp(String browsername)
 	{
 		initialiseBrowser(browsername);
 	}
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void closeBrowser(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.FAILURE)

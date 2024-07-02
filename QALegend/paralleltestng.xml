@@ -4,9 +4,9 @@
 	<test name="Login Page Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="test.LoginPageTest">
+			<class name="test.ResetPageTest">
 				<methods>
-					<include name="verifyLoginWithValidCredentials" />
+					<include name="verifyErrorMsgWithInvalidEmailId" />
 				</methods>
 			</class>
 		</classes>
@@ -17,10 +17,10 @@
 			<class name="test.HomePageTest" />
 		</classes>
 	</test> <!-- Test -->
-	<test name="Profile Page Test">
+	<test name="AddUser Page Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="test.ProfilePageTest" />
+			<class name="test.AddUserPageTest" />
 		</classes>
 	</test> <!-- Test -->
 

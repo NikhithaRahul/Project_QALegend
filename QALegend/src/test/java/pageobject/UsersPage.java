@@ -26,7 +26,7 @@ public class UsersPage {
 	WebElement update;
 	@FindBy(xpath="(//td)[3]")
 	WebElement rolefield;
-	@FindBy(xpath="//a[@class='btn btn-xs btn-info']")
+	@FindBy(xpath="(//a)[95]")
 	WebElement viewbutton;
 	@FindBy(xpath="//h3[@class='profile-username']")
 	WebElement profile_username;

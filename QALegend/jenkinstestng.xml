@@ -9,11 +9,11 @@
 		<classes>
 			<class name="test.AddUserPageTest"></class>
 			<class name="test.HomePageTest"></class>
-			<class name="LoginPageTest"></class>
-			<class name="ProfilePageTest"></class>
-			<class name="ResetPageTest"></class>
-			<class name="UserManagementTest"></class>
-			<class name="UsersPageTest"></class>
+			<class name="test.LoginPageTest"></class>
+			<class name="test.ProfilePageTest"></class>
+			<class name="test.ResetPageTest"></class>
+			<class name="test.UserManagementTest"></class>
+			<class name="test.UsersPageTest"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

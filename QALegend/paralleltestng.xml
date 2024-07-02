@@ -17,10 +17,10 @@
 			<class name="test.HomePageTest" />
 		</classes>
 	</test> <!-- Test -->
-	<test name="AddUser Page Test">
+	<test name="Profile Page Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="test.AddUserPageTest" />
+			<class name="test.ProfilePageTest" />
 		</classes>
 	</test> <!-- Test -->
 

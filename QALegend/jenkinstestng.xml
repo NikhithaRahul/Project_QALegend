@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
+		<listener class-name="listner.ExtentListners"></listener>
 		<listener class-name="listner.AnnotationTransformer"></listener>
 	</listeners>
 	<test name="Login Page Test">

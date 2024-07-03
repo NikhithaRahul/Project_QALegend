@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementUtility;
 
 public class UserManagement {
 	WebDriver driver;
@@ -28,17 +29,17 @@ public class UserManagement {
 	
 	public boolean isUserFieldEnabled()
 	{
-		return PageUtility.isElementEnabled(users);
+		return WebElementUtility.isElementEnabled(users);
 		
 	}
 	public boolean isRolesFieldEnabled()
 	{
-		return PageUtility.isElementEnabled(roles);
+		return WebElementUtility.isElementEnabled(roles);
 		
 	}
 	public boolean issalesCommisionAgentFieldEnabled()
 	{
-		return PageUtility.isElementEnabled(sales_commission_agent);
+		return WebElementUtility.isElementEnabled(sales_commission_agent);
 		
 	}
 	

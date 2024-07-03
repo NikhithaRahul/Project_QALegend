@@ -5,26 +5,16 @@
 		<listener class-name="listner.ExtentListners"></listener>
 		<listener class-name="listner.AnnotationTransformer"></listener>
 	</listeners>
-	<test name="Login Page Test">
+	<test name="AddUserPageTest">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="test.ResetPageTest">
-				<methods>
-					<include name="verifyErrorMsgWithInvalidEmailId" />
-				</methods>
-			</class>
-		</classes>
-	</test> <!-- Test -->
-	<test name="Home Page Test">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-			<class name="test.HomePageTest" />
-		</classes>
-	</test> <!-- Test -->
-	<test name="Profile Page Test">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-			<class name="test.ProfilePageTest" />
+			<class name="test.AddUserPageTest"></class>
+			<class name="test.HomePageTest"></class>
+			<class name="test.LoginPageTest"></class>
+			<class name="test.ProfilePageTest"></class>
+			<class name="test.ResetPageTest"></class>
+			<class name="test.UserManagementTest"></class>
+			<class name="test.UsersPageTest"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

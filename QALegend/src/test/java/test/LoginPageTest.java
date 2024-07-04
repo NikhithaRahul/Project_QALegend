@@ -25,7 +25,7 @@ public class LoginPageTest extends Base
 		HomePage home=login.clickOnLoginButton();
 		String actualtext=home.getUserNameTextDisplay();
 		String expectedtext=ExcelUtility.getStringData(0, 3, Constants.LOGIN_PAGE);
-		//Assert.assertEquals(actualtext, expectedtext,Messages.LOGIN_FAILED);
+		Assert.assertEquals(actualtext, expectedtext,Messages.LOGIN_FAILED);
 		
 	}
 	

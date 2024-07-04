@@ -42,7 +42,7 @@ public class UsersPageTest extends Base
 		Assert.assertEquals(actualrole, expectedrole,Messages.EDIT_STATUS);
 		
 	}
-	/*@Test
+	@Test
 	public void verifyViewFunctionality()
 	{
 		LoginPage login=new LoginPage(driver);
@@ -57,7 +57,7 @@ public class UsersPageTest extends Base
 		String actualprofilename=user.getProfileUsername();
 		String expectedprofilename=ExcelUtility.getStringData(1, 1, Constants.USERS_PAGE);
 		Assert.assertEquals(actualprofilename, expectedprofilename,Messages.VIEW_FAILED);
-	}*/
+	}
 	@Test
 	public void verifyDeleteFunctionality()
 	{

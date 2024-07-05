@@ -15,8 +15,7 @@ public class ResetPageTest extends Base {
 	public void verifyResetPageTitle()
 	{
 		LoginPage login=new LoginPage(driver);
-		ResetPage reset=new ResetPage(driver);
-		login.clickOnforgotPassword();
+		ResetPage reset=login.clickOnforgotPassword();
 		String actualtitle=reset.resetPageTitle();
 		String expectedtitle=ExcelUtility.getStringData(0, 2, Constants.RESET_PAGE);
 		Assert.assertEquals(actualtitle, expectedtitle,Messages.RESETTITLE_MISMATCH);

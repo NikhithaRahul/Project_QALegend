@@ -51,7 +51,7 @@ public class UserManagementTest extends Base{
 		HomePage home=login.clickOnLoginButton();
 		home.clickOnEndTourButton();			
 		UserManagement user_mngmt=home.clickOnUserManagement();
-		boolean status=user_mngmt.issalesCommisionAgentFieldEnabled();
+		boolean status=user_mngmt.isSalesCommisionAgentFieldEnabled();
 		Assert.assertTrue(status, Messages.ELEMENT_DISABLED);
 	}
 

@@ -64,7 +64,7 @@ public class PageUtility {
 		Actions action=new Actions(driver);
 		action.dragAndDropBy(drag, xoffset, yoffset).build().perform();
 	}
-	public static void verifymousehover(WebDriver driver,WebElement element)
+	public static void verifyMouseHover(WebDriver driver,WebElement element)
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(element).build().perform();

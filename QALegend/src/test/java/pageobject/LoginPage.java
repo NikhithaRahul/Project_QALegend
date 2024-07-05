@@ -45,7 +45,7 @@ public class LoginPage {
 	public String homePageTitle()
 	{
 		String homepagetitle=driver.getTitle();
-		System.out.println(homepagetitle);
+		
 		return homepagetitle;
 	}
 	public ResetPage clickOnforgotPassword()

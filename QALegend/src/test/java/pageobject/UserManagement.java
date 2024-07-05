@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 import utilities.WebElementUtility;
 
 public class UserManagement {
@@ -29,16 +30,19 @@ public class UserManagement {
 	
 	public boolean isUserFieldEnabled()
 	{
+		WaitUtility.waitForElementToBeVisible(driver, users);
 		return WebElementUtility.isElementEnabled(users);
 		
 	}
 	public boolean isRolesFieldEnabled()
 	{
+		WaitUtility.waitForElement(driver, roles);
 		return WebElementUtility.isElementEnabled(roles);
 		
 	}
-	public boolean issalesCommisionAgentFieldEnabled()
+	public boolean isSalesCommisionAgentFieldEnabled()
 	{
+		WaitUtility.waitForElementToBeVisible(driver, sales_commission_agent);
 		return WebElementUtility.isElementEnabled(sales_commission_agent);
 		
 	}

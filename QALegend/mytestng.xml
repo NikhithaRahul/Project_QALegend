@@ -4,17 +4,8 @@
 	<test name="FunctionalTest">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="test.LoginPageTest">
-				<methods>
-					<include name="verifyErrorMsgWhileLoginWithInvalidCredentials" />
-					<exclude name="verifyLoginWithValidCredentials"></exclude>
-				</methods>
-			</class>
-			<class name="test.AddUserPageTest">
-				<methods>
-					<include name="verifyUserLoginWithNewlyaddeduser"></include>
-					<exclude name="verifyAddUser"></exclude>
-				</methods>
+			<class name="test.ResetPageTest">
+				
 			</class>
 		</classes>
 	</test> <!-- Test -->

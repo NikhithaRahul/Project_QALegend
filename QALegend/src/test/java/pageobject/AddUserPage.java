@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import constant.Constants;
 import utilities.ExcelUtility;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class AddUserPage {
 	WebDriver driver;
@@ -50,7 +51,6 @@ public class AddUserPage {
 		firstnamefield.sendKeys(first_name);
 		
 	}
-	
 	public void enterLastName(String last_name)
 	{
 		lastnamefield.sendKeys(last_name);
@@ -64,6 +64,7 @@ public class AddUserPage {
 	
 	public void getSelectRole()
 	{
+		WaitUtility.waitForElementToBeVisible(driver, roleselection);
 		PageUtility.selectByVisibleText(roleselection,Constants.ROLE);
 	}
 	
@@ -89,6 +90,7 @@ public class AddUserPage {
 	
 	public void clickOnSaveButton()
 	{
+		WaitUtility.waitForElementTobeClickable(driver, save_button);
 		save_button.click();
 	}
 	

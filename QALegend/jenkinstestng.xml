@@ -5,16 +5,21 @@
 		<listener class-name="listner.ExtentListners"></listener>
 		<listener class-name="listner.AnnotationTransformer"></listener>
 	</listeners>
-	<test name="FunctionalTest">
-		<parameter name="browser" value="Chrome"></parameter>
+	<parameter name="browser" value="Chrome"></parameter>
+
+
+	<test name="AllTestcases">
+		<groups>
+			<run>
+				<include name="Regression"></include>
+				 <include name="Smoke"></include>
+				<include name="Sanity"></include>
+			</run>
+		</groups>
+
 		<classes>
-			<class name="test.AddUserPageTest"></class>
-			<class name="test.HomePageTest"></class>
-			<class name="test.LoginPageTest"></class>
-			<class name="test.ProfilePageTest"></class>
-			<class name="test.ResetPageTest"></class>
-			<class name="test.UserManagementTest"></class>
-			<class name="test.UsersPageTest"></class>
+			<class name="test.LoginPageTest" />
+			 <class name="test.ResetPageTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

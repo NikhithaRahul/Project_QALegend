@@ -11,14 +11,14 @@
 		<groups>
 			<run>
 				<include name="Regression"></include>
-				<!-- <include name="Smoke"></include>
-				<include name="Sanity"></include>-->
+				 <include name="Smoke"></include>
+				<include name="Sanity"></include>
 			</run>
 		</groups>
 
 		<classes>
 			<class name="test.LoginPageTest" />
-			<!-- <class name="test.ResetPageTest" />-->
+			 <class name="test.ResetPageTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

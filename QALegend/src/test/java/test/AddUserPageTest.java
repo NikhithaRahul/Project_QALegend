@@ -35,8 +35,7 @@ public class AddUserPageTest extends Base{
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
 		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
-		login.clickOnLoginButton();
-		HomePage home=new HomePage(driver);
+		HomePage home=login.clickOnLoginButton();
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
 		UsersPage user=home.clickOnUsers();

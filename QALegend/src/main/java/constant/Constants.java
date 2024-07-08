@@ -15,5 +15,6 @@ public class Constants {
 	public static final String ROLE="Specialist";
 	public static final String ADDUSER_PAGE="AddUserPage";
 	public static final String DATE_FORMAT="dd-MM-YYYY";
+	public static final String PASSWORD="@12";
 	public static final String CONFIG_FILE=System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"config.properties";
 }

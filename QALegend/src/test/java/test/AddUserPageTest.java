@@ -65,7 +65,7 @@ public class AddUserPageTest extends Base{
 		String emailid=firstname+lastname+"@gmail.com";
 		String actualemailid=emailid;
 		String username=firstname+"_"+lastname;
-		String password=firstname+lastname+"@12";
+		String password=firstname+lastname+Constants.PASSWORD;
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
 		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));

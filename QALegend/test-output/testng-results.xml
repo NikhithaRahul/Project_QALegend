@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results retried="3" ignored="3" total="23" passed="16" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-05T20:26:09 IST" name="Suite" finished-at="2024-07-05T20:27:11 IST" duration-ms="61756">
+  <suite started-at="2024-07-07T20:23:03 IST" name="Suite" finished-at="2024-07-07T20:28:35 IST" duration-ms="331528">
     <groups>
       <group name="Sanity">
-        <method signature="ResetPageTest.verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@33065d67]" name="verifyResetPageTitle" class="test.ResetPageTest"/>
+        <method signature="LoginPageTest.verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" name="verifyErrorMsgWhileLoginWithInvalidCredentials" class="test.LoginPageTest"/>
+        <method signature="ResetPageTest.verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@4278284b]" name="verifyResetPageTitle" class="test.ResetPageTest"/>
       </group> <!-- Sanity -->
+      <group name="Regression">
+        <method signature="LoginPageTest.verifyLoginWithValidCredentials()[pri:0, instance:test.LoginPageTest@332729ad]" name="verifyLoginWithValidCredentials" class="test.LoginPageTest"/>
+      </group> <!-- Regression -->
       <group name="Smoke">
-        <method signature="ResetPageTest.verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@33065d67]" name="verifyErrorMsgWithInvalidEmailId" class="test.ResetPageTest"/>
-        <method signature="ResetPageTest.verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@33065d67]" name="verifyPasswordResetwithValidEmailId" class="test.ResetPageTest"/>
+        <method signature="ResetPageTest.verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@4278284b]" name="verifyErrorMsgWithInvalidEmailId" class="test.ResetPageTest"/>
+        <method signature="ResetPageTest.verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@4278284b]" name="verifyPasswordResetwithValidEmailId" class="test.ResetPageTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-07-05T20:26:09 IST" name="FunctionalTest" finished-at="2024-07-05T20:27:11 IST" duration-ms="61756">
-      <class name="test.ResetPageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:09 IST" name="setUp" finished-at="2024-07-05T20:26:27 IST" duration-ms="17580" status="PASS">
+    <test started-at="2024-07-07T20:23:03 IST" name="AddUserPageTest" finished-at="2024-07-07T20:28:35 IST" duration-ms="331528">
+      <class name="test.ProfilePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ProfilePageTest@75d2da2d]" started-at="2024-07-07T20:24:49 IST" name="setUp" finished-at="2024-07-07T20:24:57 IST" duration-ms="7891" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,22 +29,130 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:27 IST" name="verifyErrorMsgWithInvalidEmailId" finished-at="2024-07-05T20:26:30 IST" duration-ms="3470" status="PASS">
+        <test-method signature="verifyProfileUpdate()[pri:0, instance:test.ProfilePageTest@75d2da2d]" started-at="2024-07-07T20:24:57 IST" name="verifyProfileUpdate" finished-at="2024-07-07T20:25:07 IST" duration-ms="9664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfileUpdate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ProfilePageTest@75d2da2d]" started-at="2024-07-07T20:25:07 IST" name="closeBrowser" finished-at="2024-07-07T20:25:07 IST" duration-ms="375" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyProfileUpdate status=SUCCESS method=ProfilePageTest.verifyProfileUpdate()[pri:0, instance:test.ProfilePageTest@75d2da2d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.ProfilePageTest -->
+      <class name="test.UserManagementTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:25:40 IST" name="setUp" finished-at="2024-07-07T20:25:47 IST" duration-ms="6986" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyRolesFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:25:47 IST" name="verifyRolesFieldisEnabled" finished-at="2024-07-07T20:25:51 IST" duration-ms="4186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRolesFieldisEnabled -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:25:51 IST" name="closeBrowser" finished-at="2024-07-07T20:25:51 IST" duration-ms="452" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyRolesFieldisEnabled status=SUCCESS method=UserManagementTest.verifyRolesFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:25:51 IST" name="setUp" finished-at="2024-07-07T20:26:00 IST" duration-ms="8254" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySalesCommissionAgentFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:26:00 IST" name="verifySalesCommissionAgentFieldisEnabled" finished-at="2024-07-07T20:26:15 IST" duration-ms="14875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySalesCommissionAgentFieldisEnabled -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:26:15 IST" name="closeBrowser" finished-at="2024-07-07T20:26:15 IST" duration-ms="847" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySalesCommissionAgentFieldisEnabled status=SUCCESS method=UserManagementTest.verifySalesCommissionAgentFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:26:15 IST" name="setUp" finished-at="2024-07-07T20:26:23 IST" duration-ms="7222" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUsersFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:26:23 IST" name="verifyUsersFieldisEnabled" finished-at="2024-07-07T20:26:26 IST" duration-ms="3321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsersFieldisEnabled -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UserManagementTest@9573584]" started-at="2024-07-07T20:26:26 IST" name="closeBrowser" finished-at="2024-07-07T20:26:26 IST" duration-ms="451" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUsersFieldisEnabled status=SUCCESS method=UserManagementTest.verifyUsersFieldisEnabled()[pri:0, instance:test.UserManagementTest@9573584] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.UserManagementTest -->
+      <class name="test.ResetPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:07 IST" name="setUp" finished-at="2024-07-07T20:25:17 IST" duration-ms="9776" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:17 IST" name="verifyErrorMsgWithInvalidEmailId" finished-at="2024-07-07T20:25:19 IST" duration-ms="2262" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyErrorMsgWithInvalidEmailId -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:30 IST" name="closeBrowser" finished-at="2024-07-05T20:26:31 IST" duration-ms="182" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:19 IST" name="closeBrowser" finished-at="2024-07-07T20:25:20 IST" duration-ms="798" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWithInvalidEmailId status=SUCCESS method=ResetPageTest.verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@33065d67] output={null}]]]>
+                <![CDATA[[TestResult name=verifyErrorMsgWithInvalidEmailId status=SUCCESS method=ResetPageTest.verifyErrorMsgWithInvalidEmailId()[pri:0, instance:test.ResetPageTest@4278284b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:31 IST" name="setUp" finished-at="2024-07-05T20:26:50 IST" duration-ms="19250" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:20 IST" name="setUp" finished-at="2024-07-07T20:25:26 IST" duration-ms="6112" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,22 +163,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:50 IST" name="verifyPasswordResetwithValidEmailId" finished-at="2024-07-05T20:26:52 IST" duration-ms="2476" status="PASS">
+        <test-method signature="verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:26 IST" name="verifyPasswordResetwithValidEmailId" finished-at="2024-07-07T20:25:28 IST" duration-ms="1898" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPasswordResetwithValidEmailId -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:52 IST" name="closeBrowser" finished-at="2024-07-05T20:26:53 IST" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:28 IST" name="closeBrowser" finished-at="2024-07-07T20:25:29 IST" duration-ms="270" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyPasswordResetwithValidEmailId status=SUCCESS method=ResetPageTest.verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@33065d67] output={null}]]]>
+                <![CDATA[[TestResult name=verifyPasswordResetwithValidEmailId status=SUCCESS method=ResetPageTest.verifyPasswordResetwithValidEmailId()[pri:0, instance:test.ResetPageTest@4278284b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:26:53 IST" name="setUp" finished-at="2024-07-05T20:27:10 IST" duration-ms="17390" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:29 IST" name="setUp" finished-at="2024-07-07T20:25:39 IST" duration-ms="10227" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,15 +189,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:27:10 IST" name="verifyResetPageTitle" finished-at="2024-07-05T20:27:11 IST" duration-ms="953" status="PASS">
+        <test-method signature="verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:39 IST" name="verifyResetPageTitle" finished-at="2024-07-07T20:25:39 IST" duration-ms="674" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResetPageTitle -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@33065d67]" started-at="2024-07-05T20:27:11 IST" name="closeBrowser" finished-at="2024-07-05T20:27:11 IST" duration-ms="206" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.ResetPageTest@4278284b]" started-at="2024-07-07T20:25:39 IST" name="closeBrowser" finished-at="2024-07-07T20:25:40 IST" duration-ms="291" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyResetPageTitle status=SUCCESS method=ResetPageTest.verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@33065d67] output={null}]]]>
+                <![CDATA[[TestResult name=verifyResetPageTitle status=SUCCESS method=ResetPageTest.verifyResetPageTitle()[pri:0, instance:test.ResetPageTest@4278284b] output={null}]]]>
               </value>
             </param>
           </params>
@@ -93,6 +205,684 @@
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- test.ResetPageTest -->
-    </test> <!-- FunctionalTest -->
+      <class name="test.HomePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.HomePageTest@302f7971]" started-at="2024-07-07T20:23:54 IST" name="setUp" finished-at="2024-07-07T20:24:03 IST" duration-ms="9023" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserLoginDate()[pri:0, instance:test.HomePageTest@302f7971]" started-at="2024-07-07T20:24:03 IST" name="verifyUserLoginDate" finished-at="2024-07-07T20:24:08 IST" duration-ms="4014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginDate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.HomePageTest@302f7971]" started-at="2024-07-07T20:24:08 IST" name="closeBrowser" finished-at="2024-07-07T20:24:08 IST" duration-ms="441" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginDate status=SUCCESS method=HomePageTest.verifyUserLoginDate()[pri:0, instance:test.HomePageTest@302f7971] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.HomePageTest -->
+      <class name="test.UsersPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:26:26 IST" name="setUp" finished-at="2024-07-07T20:26:34 IST" duration-ms="7759" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyDeleteFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:26:34 IST" name="verifyDeleteFunctionality" finished-at="2024-07-07T20:26:45 IST" duration-ms="10868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:26:45 IST" name="closeBrowser" finished-at="2024-07-07T20:26:46 IST" duration-ms="1143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteFunctionality status=SUCCESS method=UsersPageTest.verifyDeleteFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:26:46 IST" name="setUp" finished-at="2024-07-07T20:26:52 IST" duration-ms="6273" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyEditFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:26:52 IST" name="verifyEditFunctionality" finished-at="2024-07-07T20:27:02 IST" duration-ms="9912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:02 IST" name="closeBrowser" finished-at="2024-07-07T20:27:03 IST" duration-ms="432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEditFunctionality status=SUCCESS method=UsersPageTest.verifyEditFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:03 IST" name="setUp" finished-at="2024-07-07T20:27:12 IST" duration-ms="8819" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method retried="true" signature="verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:12 IST" name="verifyViewFunctionality" finished-at="2024-07-07T20:27:27 IST" duration-ms="15287" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ef868b3475d42245c2850db4e10542b9, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65279/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef868b3475d42245c2850db4e10542b9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ef868b3475d42245c2850db4e10542b9, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65279/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef868b3475d42245c2850db4e10542b9
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
+at pageobject.UsersPage.getProfileUsername(UsersPage.java:83)
+at test.UsersPageTest.verifyViewFunctionality(UsersPageTest.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyViewFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:27 IST" name="closeBrowser" finished-at="2024-07-07T20:27:27 IST" duration-ms="376" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyViewFunctionality status=SKIP method=UsersPageTest.verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:27 IST" name="setUp" finished-at="2024-07-07T20:27:35 IST" duration-ms="7371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method retried="true" signature="verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:35 IST" name="verifyViewFunctionality" finished-at="2024-07-07T20:27:50 IST" duration-ms="14850" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [432b66f616c4c6b8ab5e1a8a9f06c0dc, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65298}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65298/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 432b66f616c4c6b8ab5e1a8a9f06c0dc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [432b66f616c4c6b8ab5e1a8a9f06c0dc, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65298}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65298/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 432b66f616c4c6b8ab5e1a8a9f06c0dc
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
+at pageobject.UsersPage.getProfileUsername(UsersPage.java:83)
+at test.UsersPageTest.verifyViewFunctionality(UsersPageTest.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyViewFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:50 IST" name="closeBrowser" finished-at="2024-07-07T20:27:50 IST" duration-ms="418" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyViewFunctionality status=SKIP method=UsersPageTest.verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:50 IST" name="setUp" finished-at="2024-07-07T20:27:55 IST" duration-ms="5459" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method retried="true" signature="verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:27:55 IST" name="verifyViewFunctionality" finished-at="2024-07-07T20:28:11 IST" duration-ms="15139" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fd16c650e4fc30eda2fa6ae0fac25f68, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65320}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65320/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fd16c650e4fc30eda2fa6ae0fac25f68]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fd16c650e4fc30eda2fa6ae0fac25f68, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65320}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65320/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fd16c650e4fc30eda2fa6ae0fac25f68
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
+at pageobject.UsersPage.getProfileUsername(UsersPage.java:83)
+at test.UsersPageTest.verifyViewFunctionality(UsersPageTest.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyViewFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:28:11 IST" name="closeBrowser" finished-at="2024-07-07T20:28:11 IST" duration-ms="343" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyViewFunctionality status=SKIP method=UsersPageTest.verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:28:11 IST" name="setUp" finished-at="2024-07-07T20:28:18 IST" duration-ms="7448" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:28:18 IST" name="verifyViewFunctionality" finished-at="2024-07-07T20:28:33 IST" duration-ms="15084" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [541b96de60ed948a8792a2e061a0f1f9, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65359}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65359/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 541b96de60ed948a8792a2e061a0f1f9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class='profile-username']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [541b96de60ed948a8792a2e061a0f1f9, findElement {using=xpath, value=//h3[@class='profile-username']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65359}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65359/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 541b96de60ed948a8792a2e061a0f1f9
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
+at pageobject.UsersPage.getProfileUsername(UsersPage.java:83)
+at test.UsersPageTest.verifyViewFunctionality(UsersPageTest.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyViewFunctionality -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.UsersPageTest@3370f42]" started-at="2024-07-07T20:28:33 IST" name="closeBrowser" finished-at="2024-07-07T20:28:35 IST" duration-ms="1097" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyViewFunctionality status=FAILURE method=UsersPageTest.verifyViewFunctionality()[pri:0, instance:test.UsersPageTest@3370f42] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.UsersPageTest -->
+      <class name="test.LoginPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:08 IST" name="setUp" finished-at="2024-07-07T20:24:17 IST" duration-ms="9009" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:17 IST" name="verifyErrorMsgWhileLoginWithInvalidCredentials" data-provider="InvalidLogincredentials" finished-at="2024-07-07T20:24:18 IST" duration-ms="1292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1231]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorMsgWhileLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:18 IST" name="closeBrowser" finished-at="2024-07-07T20:24:19 IST" duration-ms="428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyErrorMsgWhileLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:19 IST" name="setUp" finished-at="2024-07-07T20:24:26 IST" duration-ms="7292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:26 IST" name="verifyErrorMsgWhileLoginWithInvalidCredentials" data-provider="InvalidLogincredentials" finished-at="2024-07-07T20:24:27 IST" duration-ms="1265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[adminstr]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorMsgWhileLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:27 IST" name="closeBrowser" finished-at="2024-07-07T20:24:28 IST" duration-ms="483" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyErrorMsgWhileLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:28 IST" name="setUp" finished-at="2024-07-07T20:24:34 IST" duration-ms="6446" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:34 IST" name="verifyErrorMsgWhileLoginWithInvalidCredentials" data-provider="InvalidLogincredentials" finished-at="2024-07-07T20:24:36 IST" duration-ms="1406" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[administr]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12347]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorMsgWhileLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:36 IST" name="closeBrowser" finished-at="2024-07-07T20:24:36 IST" duration-ms="415" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyErrorMsgWhileLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.verifyErrorMsgWhileLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:36 IST" name="setUp" finished-at="2024-07-07T20:24:46 IST" duration-ms="10122" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginWithValidCredentials()[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:46 IST" name="verifyLoginWithValidCredentials" finished-at="2024-07-07T20:24:49 IST" duration-ms="2894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithValidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.LoginPageTest@332729ad]" started-at="2024-07-07T20:24:49 IST" name="closeBrowser" finished-at="2024-07-07T20:24:49 IST" duration-ms="421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginWithValidCredentials status=SUCCESS method=LoginPageTest.verifyLoginWithValidCredentials()[pri:0, instance:test.LoginPageTest@332729ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.LoginPageTest -->
+      <class name="test.AddUserPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:03 IST" name="setUp" finished-at="2024-07-07T20:23:17 IST" duration-ms="14381" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAddUser()[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:17 IST" name="verifyAddUser" finished-at="2024-07-07T20:23:32 IST" duration-ms="14185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddUser -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:32 IST" name="closeBrowser" finished-at="2024-07-07T20:23:32 IST" duration-ms="741" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddUser status=SUCCESS method=AddUserPageTest.verifyAddUser()[pri:0, instance:test.AddUserPageTest@4b7dc788] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:32 IST" name="setUp" finished-at="2024-07-07T20:23:40 IST" duration-ms="7995" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyUserLoginWithNewlyaddeduser()[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:40 IST" name="verifyUserLoginWithNewlyaddeduser" finished-at="2024-07-07T20:23:54 IST" duration-ms="13727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithNewlyaddeduser -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.AddUserPageTest@4b7dc788]" started-at="2024-07-07T20:23:54 IST" name="closeBrowser" finished-at="2024-07-07T20:23:54 IST" duration-ms="309" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginWithNewlyaddeduser status=SUCCESS method=AddUserPageTest.verifyUserLoginWithNewlyaddeduser()[pri:0, instance:test.AddUserPageTest@4b7dc788] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.AddUserPageTest -->
+    </test> <!-- AddUserPageTest -->
   </suite> <!-- Suite -->
 </testng-results>

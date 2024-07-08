@@ -39,27 +39,42 @@ public class PageUtility {
 		Alert alert=driver.switchTo().alert();
 		alert.dismiss();
 	}
-	public static void enterDatainAlert(WebDriver driver,String text)
+	public static void enterDatainAlertBox(WebDriver driver,String text)
 	{
 		Alert alert=driver.switchTo().alert();
 		alert.sendKeys(text);
 	}
-	public static void doubleClick(WebDriver driver,WebElement element)
+	public static String getTextInAlert(WebDriver driver)
+	{
+		Alert alert=driver.switchTo().alert();
+		return alert.getText();
+	}
+	public static void verifyDoubleClick(WebDriver driver,WebElement element)
 	{
 		Actions action=new Actions(driver);
 		action.doubleClick(element).build().perform();
 	}
-	public static void rightClick(WebDriver driver,WebElement element)
+	public static void verifyRightClick(WebDriver driver,WebElement element)
 	{
 		Actions action=new Actions(driver);
 		action.contextClick(element).build().perform();
 	}
-	public static void dragAndDrop(WebDriver driver,WebElement drag,WebElement drop)
+	public static void verifyClickAndHold(WebDriver driver, WebElement element)
+	{
+		Actions action=new Actions(driver);
+		action.clickAndHold(element).build().perform();
+	}
+	public static void verifyMouseRelease(WebDriver driver)
+	{
+		Actions action=new Actions(driver);
+		action.release().perform();
+	}
+	public static void verifyDragAndDrop(WebDriver driver,WebElement drag,WebElement drop)
 	{
 		Actions action=new Actions(driver);
 		action.dragAndDrop(drag, drop).build().perform();
 	}
-	public static void dragAndDropOffset(WebDriver driver,WebElement drag,int xoffset,int yoffset)
+	public static void verifyDragAndDropOffset(WebDriver driver,WebElement drag,int xoffset,int yoffset)
 	{
 		Actions action=new Actions(driver);
 		action.dragAndDropBy(drag, xoffset, yoffset).build().perform();
@@ -69,6 +84,11 @@ public class PageUtility {
 		Actions action=new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
+	public static void verifyMoveByOffset(WebDriver driver,int xoffset,int yoffset)
+	{
+		Actions action=new Actions(driver);
+		action.moveByOffset(xoffset, yoffset);
+	}
 	public static void switchtoFrameUsingWebElement(WebDriver driver,WebElement element)
 	{
 		driver.switchTo().frame(element);
@@ -77,6 +97,12 @@ public class PageUtility {
 	{
 		driver.switchTo().frame(index);
 	}
+	public static void switchtoFrameUsingId(WebDriver driver,String id)
+	{
+		driver.switchTo().frame(id);
+	
+	}
+	
 	
 
 }

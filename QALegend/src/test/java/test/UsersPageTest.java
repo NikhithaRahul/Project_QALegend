@@ -68,7 +68,6 @@ public class UsersPageTest extends Base
 		String actualemailid=emailid;
 		String username=firstname+Constants.UNDERSCORE+lastname;
 		String password=firstname+lastname+Constants.PWD_DATA;
-		
 		LoginPage login=new LoginPage(driver);
 		login.enterUserName(ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE));
 		login.enterPassWord(ExcelUtility.getIntegerData(0, 2, Constants.LOGIN_PAGE));
@@ -77,7 +76,6 @@ public class UsersPageTest extends Base
 		home.clickOnEndTourButton();
 		home.clickOnUserManagement();
 		UsersPage user=home.clickOnUsers();
-		
 		AddUserPage adduser=user.clickOnAddButton();
 		adduser.enterPrefix(prefix);
 		adduser.enterFirstName(firstname);

@@ -52,7 +52,6 @@ public class HomePage {
 	public String getUserNameText()
 	{
 		String username_text=profile.getText();
-		System.out.println(username_text);
 		return username_text;
 	}
 	public UserManagement clickOnUserManagement()

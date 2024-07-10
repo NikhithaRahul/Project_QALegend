@@ -50,7 +50,6 @@ public class UsersPage {
 	{
 		WaitUtility.waitForElement(driver, searchresult);
 		String expectedemail=searchresult.getText();
-		System.out.println(expectedemail);
 		return expectedemail;
 		
 	}
@@ -75,7 +74,6 @@ public class UsersPage {
 	{
 		WaitUtility.waitForElement(driver, rolefield);
 		String role=rolefield.getText();
-		System.out.println(role);
 		return role;
 	}
 	public String getProfileUsername()

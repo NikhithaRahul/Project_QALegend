@@ -24,7 +24,6 @@ public class ResetPage {
 	public String resetPageTitle() 
 	{
 		String resetpagetitle=driver.getTitle();
-		System.out.println(resetpagetitle);
 		return resetpagetitle;
 	}
 	public void enterEmailAddress(String email)
@@ -39,13 +38,11 @@ public class ResetPage {
 	public String invalidEmailErrorMessage()
 	{
 		String errormessage=errormsg.getText();
-		System.out.println(errormessage);
 		return errormessage;
 	}
 	public String validEmailAlertMessage()
 	{
 		String alertmsg=alertmessage.getText();
-		System.out.println(alertmsg);
 		return alertmsg;
 	}
 
